@@ -1,3 +1,4 @@
+var count = 0
 $("#add-address-button").on("click", function (event) {
     event.preventDefault();
 
@@ -10,9 +11,9 @@ $("#add-address-button").on("click", function (event) {
     console.log(state_input);
 
     var newParagraph = $("#saved-addresses").append(
-        $("<p>").text(street_input + ", " + city_input + ", " + state_input),
+        $("<p id=" + count + ">").text(street_input + ", " + city_input + ", " + state_input),
     )
-
+    count++
 })
 
 
