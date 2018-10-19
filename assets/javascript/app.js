@@ -1,4 +1,9 @@
-var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=chicago";
+var latitude = 41.8841049992939;
+var longitude = -87.6479440725005;
+
+var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=" + latitude + "&longitude=" + longitude;
+
+console.log(queryURL);
 
 $.ajax({
     url: queryURL,
@@ -12,8 +17,15 @@ $.ajax({
     }
 });
 
-var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=" + APIKey;
-var APIKey = "AIzaSyCW0WYhT1udb80JnJRKChlR85AMaVgZybc"
+
+
+
+var streetName = "1600+Amphitheatre+Parkway";
+var city = "Mountain + View";
+var state = "CA";
+
+var gAPIKey = "AIzaSyCW0WYhT1udb80JnJRKChlR85AMaVgZybc"
+var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetName + "," + city + "," + state + "&key=" + gAPIKey;
 
 $.ajax({
     url: queryURL2,
