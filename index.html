@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+    crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meet Me Halfway</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-center">
+        <div class="container">
+            <h1 class="display-4">Meet Me Halfway</h1>
+            <p class="lead">Let's Meet In The Middle, Shall We?</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+
+            <form>
+                <div class="form-group">
+                    <label for="streetInput">Street Address:</label>
+                    <input type="address" class="form-control" id="streetInput" aria-describedby="addressHelp"
+                        placeholder="123 Main Street">
+
+                    <label for="cityInput">City:</label>
+                    <input type="address" class="form-control" id="cityInput" aria-describedby="addressHelp"
+                        placeholder="Anywhere">
+
+                    <label for="stateInput">State:</label>
+                    <input type="address" class="form-control" id="stateInput" aria-describedby="addressHelp"
+                        placeholder="Wyoming">
+                    <br>
+                    <button type="add" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Saved Addresses:
+                </div>
+                <div class="card-body">
+                    <span id="address1"></span>
+                    <span id="address2"></span>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary">Remove</a>
+            <a href="#" class="btn btn-primary">Submit</a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src=“https://www.gstatic.com/firebasejs/5.5.4/firebase.js“> </script> <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: 'AIzaSyBdwqsGelXo-zO_E1C5JJkTf - 7E9OQd8hI',
+            authDomain: 'meetmehalfway-a6bea.firebaseapp.com',
+            databaseURL: 'https://meetmehalfway-a6bea.firebaseio.com',
+            projectId: 'meetmehalfway-a6bea',
+            storageBucket: 'meetmehalfway-a6bea.appspot.com',
+            messagingSenderId: '403297375946'
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>
