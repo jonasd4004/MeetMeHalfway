@@ -1,3 +1,21 @@
+$("#add-address-button").on("click", function (event) {
+    event.preventDefault();
+
+    var street_input = $("#streetInput").val().trim();
+    var city_input = $("#cityInput").val().trim();
+    var state_input = $("#stateInput").val().trim();
+
+    console.log(street_input);
+    console.log(city_input);
+    console.log(state_input);
+
+    var newParagraph = $("#saved-addresses").append(
+        $("<p>").text(street_input + ", " + city_input + ", " + state_input),
+    )
+
+})
+
+
 var latitude = 41.8841049992939;
 var longitude = -87.6479440725005;
 
