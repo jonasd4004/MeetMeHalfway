@@ -1,3 +1,4 @@
+
 var database = firebase.database();
 
 $("#add-address-button").on("click", function (event) {
@@ -50,7 +51,7 @@ database.ref().on("child_added", function (childSnapshot) {
 
 
     var newButton = $("#saved-addresses").append(
-        $("<button id = button_" + count + ">").text(printedName + ": " + printedStreet + ", " + printedCity + ", " + printedState).attr("data-latitude", storedLat).attr("data-longitude", storedLng),
+        $("<button type=button class=btn id = button_" + count + ">").text(printedName + ": " + printedStreet + ", " + printedCity + ", " + printedState).attr("data-latitude", storedLat).attr("data-longitude", storedLng),
     );
 
     count++;
@@ -102,7 +103,41 @@ $("#submitButton").on("click", function () {
         dataType: 'json',
         success: function (data) {
             console.log(data);
+
+            //appending businesses to page
+            var results = data.businesses;
+
+            for (var i = 0; i < results.length; i++) {
+                var businessDiv = $("div");
+                var business = results[i].name;
+                console.log(business);
+
+                // var nameDiv = $("<div>").text(business);
+                // businessDiv.prepend(nameDiv);
+
+
+            }
         }
     });
-
 })
+
+
+// //adding a map to the page 
+// function initMap() {
+//     // The location of Uluru
+//     var uluru = { lat: -25.344, lng: 131.036 };
+//     // The map, centered at Uluru
+//     var map = new google.maps.Map(
+//         document.getElementById('map'), { zoom: 4, center: uluru });
+//     // The marker, positioned at Uluru
+//     var marker = new google.maps.Marker({ position: uluru, map: map });
+// }
+
+// // Create the new row
+// var newRow = $("<tr>").append(
+//     $("<td>").text(place),
+//     $("<td>").text(address),
+//);
+
+// // Append the new row to the table
+// $("#meetup-table > tbody").append(newRow);
