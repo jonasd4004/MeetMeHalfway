@@ -108,12 +108,14 @@ $("#submitButton").on("click", function () {
             var results = data.businesses;
 
             for (var i = 0; i < results.length; i++) {
-                var businessDiv = $("div");
+                var businessDiv = $("<div>");
                 var business = results[i].name;
                 console.log(business);
 
                 // var nameDiv = $("<div>").text(business);
-                // businessDiv.prepend(nameDiv);
+                businessDiv.prepend(business);
+                $(".businesses").prepend(businessDiv);
+
 
 
             }
