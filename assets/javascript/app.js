@@ -107,11 +107,11 @@ $("#submitButton").on("click", function () {
             //appending businesses to page
             var results = data.businesses;
             for (var i = 0; i < results.length; i++) {
-                var businessDiv = $("<div>");
+                var businessBtn = $("<button>");
                 var business = results[i].name;
                 console.log(business);
-                businessDiv.prepend(business);
-                $(".businesses").prepend(businessDiv);
+                businessBtn.prepend(business);
+                $(".businesses").prepend(businessBtn);
             }
         }
     });
