@@ -113,7 +113,7 @@ $("#submitButton").on("click", function () {
                 businessBtn.prepend(business);
                 $(".businesses").prepend(businessBtn);
 
-
+                var businessLink = results[i].app
             }
         }
     });
