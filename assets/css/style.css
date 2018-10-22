@@ -3,7 +3,6 @@ div.hidden {
 }
 
 body {
-    background-image: url(http://www.jmmenat.com/wp-content/uploads/2014/12/club.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -28,5 +27,10 @@ label {
 
 .btn {
     background-color: teal;
+}
+
+.button.btn {
+    padding-right: 5px;
+    padding-bottom: 5px;
 }
 

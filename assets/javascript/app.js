@@ -105,8 +105,21 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 console.log(data);
+                //appending businesses to page
+                var results = data.businesses;
+                for (var i = 0; i < results.length; i++) {
+                    var businessBtn = $("<button type=button class=btn>");
+                    var business = results[i].name;
+                    console.log(business);
+                    businessBtn.prepend(business);
+                    $(".businesses").prepend(businessBtn);
+
+                    var businessLink = results[i].app
+                }
             }
+
         });
+
 
     })
 });
