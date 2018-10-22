@@ -112,6 +112,8 @@ $("#submitButton").on("click", function () {
                 console.log(business);
                 businessBtn.prepend(business);
                 $(".businesses").prepend(businessBtn);
+
+
             }
         }
     });
