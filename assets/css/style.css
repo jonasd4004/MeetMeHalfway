@@ -3,27 +3,63 @@ div.hidden {
 }
 
 body {
-    background-image: url(https://www.wpeka.com/rgh/wp-content/uploads/2016/08/marble1.jpg);
+    /* background-image: url(http://www.jmmenat.com/wp-content/uploads/2014/12/club.jpg); */
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .jumbotron {
-    background-color: teal;
+    background-image: url(https://3esi-enersight.com/wp-content/uploads/2017/06/3esi-Enersight-Energy-Navigator-Business-Planning-Solution-Header-background-desktop.jpg);
     text-align: center;
+    color: white;   
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 3px;
 }
 
 label {
-    color: midnightblue;
-    letter-spacing: 2px;
+    color: #12664F;
+    letter-spacing: 1px;
 
+}
+
+form {
+    line-height: 25px;
+    margin-top: 13px;
 }
 
 .form-control {
     padding-top: 4px;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-bottom: 0px;
 }
 
 .btn {
-    background-color: teal;
+    background-color: #12664F;
+    border: none;
+    margin-top: 10px;
 }
 
+#submitButton {
+    margin-top: 21px;
+}
+
+#resetButton {
+    margin-top: 21px;
+}
+
+
+.addressButtons {
+    background-color: white;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: .25rem;
+}
+
+.addressButtons:hover {
+    background-color: #12664F;
+    color: white;
+}
