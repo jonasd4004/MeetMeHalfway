@@ -41,6 +41,7 @@ $(document).ready(function () {
 
     });
 
+
     var count = 0;
     database.ref().on("child_added", function (childSnapshot) {
 
@@ -65,8 +66,10 @@ $(document).ready(function () {
     var addressArr = [];
 
     $(document).on("click", "button", function () {
+
         var lat = $(this).data("latitude");
         var lng = $(this).data("longitude");
+
 
         console.log(lat);
         console.log(lng);
@@ -75,6 +78,12 @@ $(document).ready(function () {
         addressArr.push(lat, lng);
         console.log(addressArr);
 
+        $("#chosen-addresses").append(this);
+
+    })
+
+    $("#resetButton").on("click", function () {
+        window.location.reload();
     })
 
     $("#submitButton").on("click", function () {
@@ -98,23 +107,6 @@ $(document).ready(function () {
 
         console.log(queryURL);
 
-        $.ajax({
-            url: queryURL,
-            headers: {
-                "Authorization": 'Bearer wmYwj06AsfngvmJGfrL_-F9ibDZpRsHgw8NBfYIrTB3NJWH9ryUxel4uAJwvmfiscBEUN7AxDaF4v0aTikUsBVRoZgLMFzcvlhUgvceIpVFG6_KRqxn3nc5qCM_HW3Yx',
-            },
-            method: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data);
-                //appending businesses to page
-                var results = data.businesses;
-                for (var i = 0; i < results.length; i++) {
-                    var businessBtn = $("<button type=button class=btn>");
-                    var business = results[i].name;
-                    console.log(business);
-                    businessBtn.prepend(business);
-                    $(".businesses").prepend(businessBtn);
 
 
     $.ajax({

@@ -15,10 +15,10 @@
     <a href="assets/css/style.css"></a>
     <title>Meet Me Halfway</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 </head>
 
 <body>
-
 
     <div class="hidden">
         <div class="jumbotron jumbotron-center" style="text-align: center">
@@ -28,7 +28,6 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-1"></div>
                 <div class="col-md-4">
 
                     <form>
@@ -39,7 +38,7 @@
 
                             <label for="streetInput">Street Address:</label>
                             <input type="text" class="form-control" id="streetInput" aria-describedby="addressHelp"
-                                placeholder="123 Kingsroad Lane">
+                                placeholder="123 Kingsroad">
 
                             <label for="cityInput">City:</label>
                             <input type="text" class="form-control" id="cityInput" aria-describedby="addressHelp"
@@ -48,11 +47,35 @@
                             <label for="stateInput">State:</label>
                             <input type="text" class="form-control" id="stateInput" aria-describedby="addressHelp"
                                 placeholder="Westeros">
-                            <br>
-                            <button type="add" class="btn btn-primary" id="add-address-button">Add</button>
+                            <a href="#" class="btn btn-primary" id="add-address-button">Add</a>
                         </div>
                     </form>
                 </div>
+
+                <div class="col-md-4">
+                    <br>
+                    <div class="card">
+                        <div class="card-header" style=background-color:#12664F;color:white>
+                            Saved Addresses: (Select Two)
+                        </div>
+                        <div class="card-body" id="saved-addresses">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <br>
+                    <div class="card">
+                        <div class="card-header" style=background-color:#12664F;color:white>
+                            Chosen Addresses:
+                        </div>
+                        <div class="card-body" id="chosen-addresses">
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" id="submitButton">Submit</a>
+                    <a href="#" class="btn btn-primary" id="resetButton">Reset</a>
+                </div>
+            </div>
 
 
                 <div class="col-md-1"></div>
@@ -112,72 +135,10 @@
                 <div class="col-md-1"></div>
             </div>
 
-            <div class="col-md-1"></div>
-        </div>
+           
+     
     </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div id="map"></div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 pt-3">
-            <div class="card">
-                <div class="card-header">We can meet at...</div>
-                <div class="card-body">
-                    <div class="businesses"></div>
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-
-        <div class="col-md-10">
-            <div id="map"></div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 pt-3">
-            <div class="card">
-                <div class="card-header">We can meet at...</div>
-                <div class="card-body">
-                    <div class="businesses"></div>
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-
-        <div class="col-md-10 pt-3">
-            <div class="card mb-4">
-                <div class="card-header">Saved Meetup Places</div>
-                <div class="card-body">
-                    <table class="table table-sm table-hover" id='meetup-table'>
-                        <thead>
-                            <tr>
-                                <th scope="col">Place</th>
-                                <th scope="col">Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-
-    </div>
-
+   
 
     <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
     <script>
