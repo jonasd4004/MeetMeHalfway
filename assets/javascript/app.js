@@ -1,4 +1,3 @@
-
 var database = firebase.database();
 
 $(document).ready(function () {
@@ -137,9 +136,7 @@ $(document).ready(function () {
                 businessBtn.prepend(business);
                 $(".businesses").prepend(businessBtn);
 
-
-
-
+  
                     var businessLink = results[i].app
                 }
             }
@@ -149,4 +146,5 @@ $(document).ready(function () {
 
     })
 });
+
 
