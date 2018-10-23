@@ -7,15 +7,19 @@
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
         crossorigin='anonymous'></script>
     <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW0WYhT1udb80JnJRKChlR85AMaVgZybc&callback=initMap">
+    </script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <a href="assets/css/style.css"></a>
     <title>Meet Me Halfway</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="hidden">
         <div class="jumbotron jumbotron-center" style="text-align: center">
             <h1 class="display-4">Meet Me Halfway</h1>
@@ -59,7 +63,6 @@
                     </div>
                 </div>
 
-
                 <div class="col-md-4">
                     <br>
                     <div class="card">
@@ -75,12 +78,67 @@
             </div>
 
 
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <br>
+                    <div class="card">
+                        <div class="card-header">
+                            Saved Addresses: (Select Two)
+                        </div>
+                        <div class="card-body" id="saved-addresses">
+                        </div>
+                    </div>
+                    <br>
+                    <a href="#" class="btn btn-primary" id="submitButton">Submit</a>
+                    <a href="#" class="btn btn-primary">Remove</a>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div id="map"></div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 pt-3">
+                    <div class="card">
+                        <div class="card-header">We can meet at...</div>
+                        <div class="card-body">
+                            <div class="businesses"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 pt-3">
+                    <div class="card mb-4">
+                        <div class="card-header">Saved Meetup Places</div>
+                        <div class="card-body">
+                            <table class="table table-sm table-hover" id='meetup-table'>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Place</th>
+                                        <th scope="col">Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
 
-        </div>
-
+           
+     
     </div>
-    </div>
-
+   
 
     <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
     <script>
@@ -95,6 +153,7 @@
         };
         firebase.initializeApp(config);
     </script>
+
     <script src="assets/javascript/app.js"></script>
 
 

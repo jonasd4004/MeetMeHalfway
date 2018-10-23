@@ -1,9 +1,10 @@
+
 div.hidden {
     display: none
 }
 
 body {
-    /* background-image: url(http://www.jmmenat.com/wp-content/uploads/2014/12/club.jpg); */
+
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -12,8 +13,9 @@ body {
     background-image: url(https://3esi-enersight.com/wp-content/uploads/2017/06/3esi-Enersight-Energy-Navigator-Business-Planning-Solution-Header-background-desktop.jpg);
     text-align: center;
     color: white;   
+
     font-family: 'Abril Fatface', cursive;
-    letter-spacing: 3px;
+  letter-spacing: 3px;
 }
 
 label {
@@ -58,6 +60,7 @@ label {
     cursor: pointer;
     border-radius: .25rem;
 }
+
 
 .addressButtons:hover {
     background-color: #12664F;
