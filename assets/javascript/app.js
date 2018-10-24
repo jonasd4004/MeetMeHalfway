@@ -124,8 +124,6 @@ $(document).ready(function () {
 
         console.log(queryURL);
 
-        move();
-
 
         $.ajax({
             url: queryURL,
