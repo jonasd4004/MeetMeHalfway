@@ -27,7 +27,7 @@
         </div>
 
         <div class="container">
-            <div class="row">
+            <div class="row" id="input_row">
                 <div class="col-md-4">
 
                     <form>
@@ -73,50 +73,22 @@
                         </div>
                     </div>
                     <a href="#" class="btn btn-primary" id="submitButton">Submit</a>
-                    <a href="#" class="btn btn-primary" id="resetButton">Reset</a>
                 </div>
             </div>
 
 
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div id="map"></div>
-                </div>
-                <div class="col-md-1"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10 pt-3">
+
+            <div class="row" id="results_row">
+
+                <div class="col-md-12 pt-3">
                     <div class="card">
-                        <div class="card-header">We can meet at...</div>
+                        <div class="card-header" style=background-color:#12664F;color:white>We can meet at...</div>
                         <div class="card-body">
                             <div class="businesses"></div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
+                    <button class="btn btn-primary center-block" id="resetButton" style="text-align: center">Reset</button>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10 pt-3">
-                    <div class="card mb-4">
-                        <div class="card-header">Saved Meetup Places</div>
-                        <div class="card-body">
-                            <table class="table table-sm table-hover" id='meetup-table'>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Place</th>
-                                        <th scope="col">Address</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
             </div>
 
 
