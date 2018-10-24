@@ -4,6 +4,8 @@ $(document).ready(function () {
     $('div.hidden').fadeIn(2000).removeClass('hidden');
     $("#results_row").hide();
 
+    var clickCount = 0;
+
     $("#add-address-button").on("click", function (event) {
         event.preventDefault();
 
@@ -11,6 +13,8 @@ $(document).ready(function () {
         var street_input = $("#streetInput").val().trim();
         var city_input = $("#cityInput").val().trim();
         var state_input = $("#stateInput").val().trim();
+
+
 
         var gAPIKey = "AIzaSyCW0WYhT1udb80JnJRKChlR85AMaVgZybc"
         var queryURL2 = "https://maps.googleapis.com/maps/api/geocode/json?address=" + street_input + "," + city_input + "," + state_input + "&key=" + gAPIKey;
@@ -68,18 +72,21 @@ $(document).ready(function () {
 
     $("#saved-addresses").on("click", "button", function () {
 
-        var lat = $(this).data("latitude");
-        var lng = $(this).data("longitude");
+        if (clickCount < 2) {
+            console.log(clickCount);
+            var lat = $(this).data("latitude");
+            var lng = $(this).data("longitude");
+            clickCount++
+
+            console.log(lat);
+            console.log(lng);
 
 
-        console.log(lat);
-        console.log(lng);
+            addressArr.push(lat, lng);
+            console.log(addressArr);
 
-
-        addressArr.push(lat, lng);
-        console.log(addressArr);
-
-        $("#chosen-addresses").append(this);
+            $("#chosen-addresses").append(this);
+        } else { };
 
     })
 
