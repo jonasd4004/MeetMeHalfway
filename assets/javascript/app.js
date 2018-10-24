@@ -65,7 +65,7 @@ $(document).ready(function () {
 
     var addressArr = [];
 
-    $(document).on("click", "button", function () {
+    $("#saved-addresses").on("click", "button", function () {
 
         var lat = $(this).data("latitude");
         var lng = $(this).data("longitude");
@@ -109,6 +109,7 @@ $(document).ready(function () {
 
 
 
+
         $.ajax({
             url: queryURL,
             headers: {
@@ -121,12 +122,19 @@ $(document).ready(function () {
 
                 //appending businesses to page
                 var results = data.businesses;
+                console.log(results);
                 for (var i = 0; i < results.length; i++) {
                     var businessBtn = $("<button type=button class=btn>");
                     var business = results[i].name;
+                    var businessURL = results[i].url;
                     console.log(business);
-                    businessBtn.prepend(business);
+                    businessBtn.text(business);
+                    businessBtn.attr("href", businessURL);
+                    businessBtn.on("click", function () {
+                        window.open($(this).attr("href"), '_blank');
+                    });
                     $(".businesses").prepend(businessBtn);
+
 
 
                     var businessLink = results[i].app
@@ -134,6 +142,7 @@ $(document).ready(function () {
             }
 
         });
+
 
 
     })
