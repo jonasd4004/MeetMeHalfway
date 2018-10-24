@@ -3,6 +3,7 @@ var database = firebase.database();
 $(document).ready(function () {
     $('div.hidden').fadeIn(2000).removeClass('hidden');
     $("#results_row").hide();
+    $("#myProgress").hide();
 
     $("#add-address-button").on("click", function (event) {
         event.preventDefault();
@@ -87,9 +88,12 @@ $(document).ready(function () {
         window.location.reload();
     })
 
+
+
     $("#submitButton").on("click", function () {
         $("#input_row").hide();
         $("#results_row").show();
+        $("#myProgress").show();
 
         var lat_1 = addressArr[0];
         console.log(lat_1)
@@ -111,7 +115,7 @@ $(document).ready(function () {
 
         console.log(queryURL);
 
-
+        move();
 
 
         $.ajax({
