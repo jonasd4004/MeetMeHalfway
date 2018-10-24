@@ -54,9 +54,9 @@ $(document).ready(function () {
 
 
 
-    var newButton = $("#saved-addresses").append(
-        $("<button type=button class=btn id = button_" + count + ">").text(printedName + ": " + printedStreet + ", " + printedCity + ", " + printedState).attr("data-latitude", storedLat).attr("data-longitude", storedLng),
-    );
+        var newButton = $("#saved-addresses").append(
+            $("<button id = button_" + count + " class = addressButtons>").text(printedName + ": " + printedStreet + ", " + printedCity + ", " + printedState).attr("data-latitude", storedLat).attr("data-longitude", storedLng),
+        );
 
 
         count++;
@@ -109,26 +109,26 @@ $(document).ready(function () {
 
 
 
-    $.ajax({
-        url: queryURL,
-        headers: {
-            "Authorization": 'Bearer wmYwj06AsfngvmJGfrL_-F9ibDZpRsHgw8NBfYIrTB3NJWH9ryUxel4uAJwvmfiscBEUN7AxDaF4v0aTikUsBVRoZgLMFzcvlhUgvceIpVFG6_KRqxn3nc5qCM_HW3Yx',
-        },
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
+        $.ajax({
+            url: queryURL,
+            headers: {
+                "Authorization": 'Bearer wmYwj06AsfngvmJGfrL_-F9ibDZpRsHgw8NBfYIrTB3NJWH9ryUxel4uAJwvmfiscBEUN7AxDaF4v0aTikUsBVRoZgLMFzcvlhUgvceIpVFG6_KRqxn3nc5qCM_HW3Yx',
+            },
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
 
-            //appending businesses to page
-            var results = data.businesses;
-            for (var i = 0; i < results.length; i++) {
-                var businessBtn = $("<button type=button class=btn>");
-                var business = results[i].name;
-                console.log(business);
-                businessBtn.prepend(business);
-                $(".businesses").prepend(businessBtn);
+                //appending businesses to page
+                var results = data.businesses;
+                for (var i = 0; i < results.length; i++) {
+                    var businessBtn = $("<button type=button class=btn>");
+                    var business = results[i].name;
+                    console.log(business);
+                    businessBtn.prepend(business);
+                    $(".businesses").prepend(businessBtn);
 
-  
+
                     var businessLink = results[i].app
                 }
             }
