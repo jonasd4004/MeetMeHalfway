@@ -7,6 +7,8 @@ $(document).ready(function () {
 
     var clickCount = 0;
 
+    var clickCount = 0;
+
     $("#add-address-button").on("click", function (event) {
         event.preventDefault();
 
