@@ -2,6 +2,7 @@ var database = firebase.database();
 
 $(document).ready(function () {
     $('div.hidden').fadeIn(2000).removeClass('hidden');
+    $("#results_row").hide();
 
     $("#add-address-button").on("click", function (event) {
         event.preventDefault();
@@ -65,7 +66,7 @@ $(document).ready(function () {
 
     var addressArr = [];
 
-    $(document).on("click", "button", function () {
+    $("#saved-addresses").on("click", "button", function () {
 
         var lat = $(this).data("latitude");
         var lng = $(this).data("longitude");
@@ -87,6 +88,9 @@ $(document).ready(function () {
     })
 
     $("#submitButton").on("click", function () {
+        $("#input_row").hide();
+        $("#results_row").show();
+
         var lat_1 = addressArr[0];
         console.log(lat_1)
         var lng_1 = addressArr[1];
@@ -103,7 +107,7 @@ $(document).ready(function () {
         var midpointLng = midpoint.geometry.coordinates[1];
 
 
-        var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=" + midpointLat + "&longitude=" + midpointLng;
+        var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=" + midpointLat + "&longitude=" + midpointLng + "&radius=800";
 
         console.log(queryURL);
 
@@ -122,7 +126,7 @@ $(document).ready(function () {
                 //appending businesses to page
                 var results = data.businesses;
                 for (var i = 0; i < results.length; i++) {
-                    var businessBtn = $("<button type=button class=btn>");
+                    var businessBtn = $("<button type=button class=businessButtons>");
                     var business = results[i].name;
                     console.log(business);
                     businessBtn.prepend(business);
